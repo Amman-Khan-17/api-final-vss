@@ -7,7 +7,10 @@ import { TaskUpdate } from "./taskUpdate";
 import { TaskDelete } from "./taskDelete";
 
 export const tasksRouter = fromHono(new Hono());
+import { healthCheck } from "./endpoints/health";
 
+// Example router registration (Cloudflare Workers / Itty Router style)
+router.get("/health", healthCheck);
 tasksRouter.get("/", TaskList);
 tasksRouter.post("/", TaskCreate);
 tasksRouter.get("/:id", TaskRead);
