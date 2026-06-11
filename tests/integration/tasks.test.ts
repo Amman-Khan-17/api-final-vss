@@ -22,6 +22,18 @@ describe("Task API Integration Tests", () => {
 		vi.clearAllMocks();
 	});
 
+	// Tests for GET /health
+	describe("GET /health", () => {
+		it("should return a 200 OK status and health confirmation", async () => {
+			const response = await SELF.fetch(`http://local.test`);
+			const body = await response.json<{ success: boolean; status: string }>();
+
+			expect(response.status).toBe(200);
+			expect(body.success).toBe(true);
+			expect(body.status).toBe("OK");
+		});
+	});
+
 	// Tests for GET /tasks
 	describe("GET /tasks", () => {
 		it("should get an empty list of tasks", async () => {
