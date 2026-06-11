@@ -1,0 +1,16 @@
+{
+	"compatibility_date": "2025-10-08",
+	"main": "src/index.ts",
+	"name": "api-final-vss",
+	"upload_source_maps": true,
+	"observability": {
+		"enabled": true
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "api-db",
+			"database_id": "fe1c5fc9-77c9-4667-ba01-e20fe9f80377"
+		}
+	]
+}
